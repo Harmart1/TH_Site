@@ -1,0 +1,13 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Smooth scrolling for all browsers */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom styles for contact form dropdown in dark mode */
+select option {
+  color: initial;
+}
