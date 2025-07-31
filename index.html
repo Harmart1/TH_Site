@@ -66,6 +66,17 @@
     }
     </script>
   </head>
+  <!-- Chat Assistant UI -->
+<link rel="stylesheet" href="chat.css">
+<div id="legal-chat" class="chat-container">
+  <div class="chat-header">Legal Assistant</div>
+  <div id="chat-log" class="chat-log"></div>
+  <div class="chat-input-area">
+    <input id="chat-input" type="text" placeholder="Ask a question..." />
+    <button id="chat-send">Send</button>
+  </div>
+</div>
+<script src="chat.js"></script>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
