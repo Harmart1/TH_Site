@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Shield, Ship, Lightbulb, Building, Phone, Mail, MapPin, Menu, X,
   ChevronUp, Award, Users, BookOpen, ArrowRight, Sun, Moon, MessageCircle,
-  Linkedin, Twitter 
+  Linkedin, Twitter, Scale
 } from 'lucide-react';
 import ChatAssistant from './components/ChatAssistant';
 import './App.css';
@@ -104,10 +104,11 @@ const App = () => {
 
   const navItems = ['home', 'about', 'services', 'contact'];
   const services = [
-    { icon: Shield, title: "Cybersecurity & Privacy Law", description: "PIPEDA compliance, data breach response, privacy policy development, and cybersecurity audits.", features: ["Data Protection", "Privacy Compliance", "Breach Response", "CASL Compliance"] },
-    { icon: Ship, title: "Maritime & Shipping Law", description: "Specialized expertise in Great Lakes shipping, vessel documentation, and maritime regulations.", features: ["Vessel Documentation", "Shipping Contracts", "Maritime Insurance", "Port Authority Matters"] },
-    { icon: Lightbulb, title: "Intellectual Property Law", description: "Comprehensive IP protection including patents, trademarks, copyrights, and licensing agreements.", features: ["Patent Applications", "Trademark Registration", "IP Licensing", "Trade Secrets"] },
-    { icon: Building, title: "Business & Corporate Law", description: "Corporate structuring, commercial agreements, and business development consulting.", features: ["Corporate Structuring", "Commercial Agreements", "M&A", "Business Succession"] }
+    { icon: Shield, title: "Cybersecurity & Privacy Law", description: "Providing both legal and consulting services for PIPEDA compliance, data breach response, privacy policy development, and cybersecurity audits.", features: ["Data Protection", "Privacy Compliance", "Breach Response", "CASL Compliance"] },
+    { icon: Ship, title: "Maritime & Shipping Law", description: "Expert legal and consulting services for Great Lakes shipping, including Soo Locks navigation, cross-border trade, vessel documentation, and customs regulations.", features: ["Soo Locks Regulations", "Cross-Border Shipping", "Vessel Documentation", "Maritime Insurance"] },
+    { icon: Lightbulb, title: "Intellectual Property Law", description: "Comprehensive legal and consulting support for IP protection, including patents, trademarks, copyrights, and licensing agreements.", features: ["Patent Applications", "Trademark Registration", "IP Licensing", "Trade Secrets"] },
+    { icon: Building, title: "Business & Corporate Law", description: "Strategic legal and consulting services for corporate structuring, commercial agreements, and business development.", features: ["Corporate Structuring", "Commercial Agreements", "M&A", "Business Succession"] },
+    { icon: Scale, title: "Immigration & Refugee Law", description: "Dedicated legal and consulting services for individuals and businesses, focusing on the Rural and Northern Immigration Pilot (RNIP), family sponsorship, work permits, and refugee claims.", features: ["RNIP Applications", "Family Sponsorship", "Work & Study Permits", "Refugee Claims"] }
   ];
   const credentials = [
     "Master of Engineering, Cybersecurity Policy and Compliance (Candidate)",
@@ -173,9 +174,9 @@ const App = () => {
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
                 <span className="text-5xl md:text-7xl">TIM HARMAR</span><br />
-                <span className="text-2xl md:text-3xl text-teal-300">Legal & Consulting Services</span>
+                <span className="text-2xl md:text-3xl text-teal-300">Global Legal & Consulting Services</span>
               </h1>
-              <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Where Technology Meets Law. Specialized expertise in cybersecurity, AI law, intellectual property, and maritime law in Sault Ste. Marie.</p>
+              <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Leveraging technology to provide expert legal and consulting services from Sault Ste. Marie to clients worldwide. Specializing in cybersecurity, maritime, IP, and immigration law.</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button onClick={() => scrollToSection('contact')} className="bg-teal-500 hover:bg-teal-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center gap-2">Schedule Consultation <ArrowRight size={20} /></button>
                 <button onClick={() => scrollToSection('services')} className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-3 rounded-lg font-semibold transition-colors duration-200">Our Services</button>
@@ -185,7 +186,7 @@ const App = () => {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-20 bg-gray-50 dark:bg-gray-900/60">
+        <section id="about" className="py-20 bg-gray-100 dark:bg-gray-800/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
               <h2 className="text-3xl md:text-4xl font-bold text-blue-900 dark:text-white mb-6">About Tim Harmar</h2>
@@ -212,13 +213,13 @@ const App = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-blue-900 dark:text-white mb-6">Specialized Legal Services</h2>
               <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">Cutting-edge legal expertise for the digital age, serving businesses and entrepreneurs in Sault Ste. Marie and beyond.</p>
             </motion.div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service, i) => (
-                <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: i * 0.1 }} viewport={{ once: true }} className="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg hover:shadow-lg dark:hover:shadow-teal-500/10 transition-shadow duration-300 group">
-                  <div className="flex items-center mb-4"><service.icon className="w-8 h-8 text-teal-500 mr-3" /><h3 className="text-xl font-bold text-blue-900 dark:text-white">{service.title}</h3></div>
+                <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: i * 0.1 }} viewport={{ once: true }} className="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg hover:shadow-xl dark:hover:shadow-teal-500/20 transition-all duration-300 group transform hover:-translate-y-2">
+                  <div className="flex items-center mb-4"><service.icon className="w-10 h-10 text-teal-500 mr-4 transition-transform duration-300 group-hover:scale-110" /><h3 className="text-xl font-bold text-blue-900 dark:text-white">{service.title}</h3></div>
                   <p className="text-gray-700 dark:text-gray-300 mb-6">{service.description}</p>
                   <ul className="space-y-2">
-                    {service.features.map((feat, j) => <li key={j} className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-teal-500 rounded-full transition-transform duration-300 group-hover:scale-150"></div><span className="text-sm text-gray-600 dark:text-gray-400">{feat}</span></li>)}
+                    {service.features.map((feat, j) => <li key={j} className="flex items-center gap-3"><div className="w-2 h-2 bg-teal-500 rounded-full transition-transform duration-300 group-hover:scale-125"></div><span className="text-sm text-gray-600 dark:text-gray-400">{feat}</span></li>)}
                   </ul>
                 </motion.div>
               ))}
@@ -263,7 +264,7 @@ const App = () => {
                     >
                       <div><label htmlFor="name" className="block text-sm font-medium mb-2">Name</label><input type="text" id="name" name="name" required className="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-teal-300" placeholder="Your full name" /></div>
                       <div><label htmlFor="email" className="block text-sm font-medium mb-2">Email</label><input type="email" id="email" name="email" required className="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-teal-300" placeholder="your.email@example.com" /></div>
-                      <div><label htmlFor="service" className="block text-sm font-medium mb-2">Legal Matter</label><select id="service" name="service" required className="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white focus:outline-none focus:ring-2 focus:ring-teal-300"><option value="">Select a service area</option><option value="cybersecurity">Cybersecurity & Privacy Law</option><option value="maritime">Maritime & Shipping Law</option><option value="ip">Intellectual Property Law</option><option value="business">Business & Corporate Law</option><option value="other">Other</option></select></div>
+                      <div><label htmlFor="service" className="block text-sm font-medium mb-2">Legal Matter</label><select id="service" name="service" required className="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white focus:outline-none focus:ring-2 focus:ring-teal-300"><option value="">Select a service area</option><option value="cybersecurity">Cybersecurity & Privacy Law</option><option value="maritime">Maritime & Shipping Law</option><option value="ip">Intellectual Property Law</option><option value="business">Business & Corporate Law</option><option value="immigration">Immigration & Refugee Law</option><option value="other">Other</option></select></div>
                       <div><label htmlFor="message" className="block text-sm font-medium mb-2">Message</label><textarea id="message" name="message" rows={4} required className="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-teal-300" placeholder="Brief description of your legal needs..."></textarea></div>
                       <button type="submit" className="w-full bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200">Send Message</button>
                     </form>
@@ -276,7 +277,7 @@ const App = () => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-800 dark:bg-black text-white py-12">
+      <footer className="bg-gradient-to-b from-gray-800 to-black dark:from-black dark:to-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
             <div>
