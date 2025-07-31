@@ -75,7 +75,29 @@ const App = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    setFormSubmitted(true);
+    // This is a simplified handler. In a real-world scenario,
+    // you would have more robust validation and error handling.
+    const form = e.target;
+    const data = new FormData(form);
+
+    fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        setFormSubmitted(true);
+        form.reset();
+      } else {
+        // You can add more sophisticated error handling here
+        alert("Oops! There was a problem submitting your form.");
+      }
+    }).catch(error => {
+      // Handle network errors
+      alert("Oops! There was a problem submitting your form.");
+    });
   };
 
   // --- Data Arrays ---
@@ -229,7 +251,16 @@ const App = () => {
                 ) : (
                   <>
                     <h3 className="text-2xl font-bold mb-6">Schedule a Consultation</h3>
-                    <form onSubmit={handleFormSubmit} className="space-y-4">
+                    {/*
+                      To make this form work, create a new form on formspree.io
+                      and replace the URL below with your own.
+                    */}
+                    <form
+                      onSubmit={handleFormSubmit}
+                      action="https://formspree.io/f/YOUR_FORM_ID" // Replace with your Formspree form ID
+                      method="POST"
+                      className="space-y-4"
+                    >
                       <div><label htmlFor="name" className="block text-sm font-medium mb-2">Name</label><input type="text" id="name" name="name" required className="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-teal-300" placeholder="Your full name" /></div>
                       <div><label htmlFor="email" className="block text-sm font-medium mb-2">Email</label><input type="email" id="email" name="email" required className="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-teal-300" placeholder="your.email@example.com" /></div>
                       <div><label htmlFor="service" className="block text-sm font-medium mb-2">Legal Matter</label><select id="service" name="service" required className="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white focus:outline-none focus:ring-2 focus:ring-teal-300"><option value="">Select a service area</option><option value="cybersecurity">Cybersecurity & Privacy Law</option><option value="maritime">Maritime & Shipping Law</option><option value="ip">Intellectual Property Law</option><option value="business">Business & Corporate Law</option><option value="other">Other</option></select></div>
@@ -252,8 +283,9 @@ const App = () => {
               <img src={logoWhite} alt="Tim Harmar Legal White Logo" className="h-12 w-auto mb-4 mx-auto md:mx-0" />
               <p className="text-gray-400 mb-4">Specialized legal services for the digital age, serving Sault Ste. Marie and beyond.</p>
               <div className="flex space-x-4 justify-center md:justify-start">
-                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" className="text-gray-400 hover:text-white"><Linkedin size={20} /></a>
-                <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter Profile" className="text-gray-400 hover:text-white"><Twitter size={20} /></a>
+                {/* TODO: Replace with actual social media profile URLs */}
+                <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" className="text-gray-400 hover:text-white"><Linkedin size={20} /></a>
+                <a href="https://www.twitter.com/your-profile" target="_blank" rel="noopener noreferrer" aria-label="Twitter Profile" className="text-gray-400 hover:text-white"><Twitter size={20} /></a>
               </div>
             </div>
             <div>

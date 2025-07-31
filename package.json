@@ -1,17 +1,11 @@
-
-#### **`package.json`**
-
-This file lists the project dependencies and scripts.
-
-```json
 {
   "name": "tim-harmar-legal-website",
   "private": true,
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "npx vite",
+    "build": "npx vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
