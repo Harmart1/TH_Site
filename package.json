@@ -1,18 +1,16 @@
 {
-  "homepage": "https://harmart1.github.io/TH_Site/",
-  "name": "tim-harmar-legal-website",
+  "name": "th_site",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.0.0",
+  "homepage": "https://harmartim-oss.github.io/TH_Site",
   "type": "module",
   "scripts": {
-    "dev": "npx vite",
-    "build": "npx vite build",
+    "dev": "vite",
+    "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
-    "framer-motion": "^11.2.10",
-    "lucide-react": "^0.395.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -20,13 +18,10 @@
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@vitejs/plugin-react": "^4.2.1",
-    "autoprefixer": "^10.4.19",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
-    "postcss": "^8.4.38",
-    "tailwindcss": "^3.4.4",
     "vite": "^5.2.0"
   }
 }
