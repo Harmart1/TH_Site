@@ -5,4 +5,8 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: '/TH_Site/',
+  build: {
+    // Explicitly disable Server-Side Rendering
+    ssr: false,
+  }
 })
