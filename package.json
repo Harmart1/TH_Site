@@ -2,7 +2,7 @@
   "name": "th_site",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://harmartim-oss.github.io/TH_Site",
+  "homepage": "https://harmart1.github.io/TH_Site",
   "type": "module",
   "scripts": {
     "dev": "vite",
